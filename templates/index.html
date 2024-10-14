@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Consumption Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+
+        .prediction {
+            font-size: 1.2em;
+            color: #222;
+            background: #e0f7fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: 80%;
+            text-align: center;
+        }
+
+        .prediction strong {
+            color: #ff5722;
+        }
+
+        .date {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .chart-section {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* About section styling */
+        .about-section {
+            margin-top: 40px;
+            width: 80%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2em;
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .about-section a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        /* Animations */
+        .electricity-animation {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Electricity-icon.png') no-repeat center;
+            background-size: contain;
+            animation: spin 3s infinite linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Odisha Power Consumption Prediction</h1>
+    
+    <div class="prediction">
+        <p class="date">Current Date: <strong>{{ current_date }}</strong></p>
+        <p>Estimated Power Consumption for today: <strong>{{ predicted_power }} MU</strong></p>
+    </div>
+
+    <div class="electricity-animation"></div>
+
+    <h2>Estimated Power Consumption for the Year</h2>
+    
+    <div class="chart-section">
+        <img src="{{ plot_url }}" alt="Power Consumption Plot">
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h2>About the Project</h2>
+        <p>Hello! My name is <strong>G Venkatesh</strong>, currently pursuing my degree in Electrical and Electronics Engineering (EEE).</p>
+        <p>This webpage was created to predict power consumption in the state of Odisha using historical data. It provides estimates for today’s power usage and visualizes the entire year's power consumption trend.</p>
+        <p>The dataset used for this project is sourced from <a href="https://www.kaggle.com/datasets/twinkle0705/state-wise-power-consumption-in-india" target="_blank">Kaggle: State-wise Power Consumption in India</a>. The data covers the year 2019-20 and helps in analyzing and forecasting power consumption.</p>
+    </div>
+
+    <footer>
+        <p><a href="https://github.com/GVenkatesh-12" target="_blank">My Github</a> | Data for 2019-20</p>
+    </footer>
+</body>
+</html>
